@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueLib Catalogue - BlueCrest College Ghana</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">B</span>
+      <div>
+        <h1>BlueLib Catalogue</h1>
+        <p class="subtitle">BlueCrest College Ghana &bull; IT Dept</p>
+      </div>
+    </div>
+    <nav>
+      <a class="btn btn-outline" href="#add-book">+ Add Book</a>
+    </nav>
+  </header>
+
+  <div class="status-bar">
+    <p>Live In-Memory Data &nbsp;|&nbsp; Course: <strong>BIT225</strong></p>
+    <p class="pill" id="titleCount">6 Titles Available</p>
+  </div>
+
+  <main>
+    <section class="hero">
+      <h2>Explore Books &amp; Research Materials</h2>
+      <p>Search titles, filter by category, or borrow reading copies instantly with automatic stock management.</p>
+    </section>
+
+    <section class="panel" id="catalogue">
+      <h2 class="panel-title">Search &amp; Filter</h2>
+      <label for="search">Search by book title or author</label>
+      <input type="text" id="search" placeholder="Type to search...">
+      <label for="categoryFilter">Category</label>
+      <select id="categoryFilter">
+        <option value="All">All Categories (Overview)</option>
+        <option value="IT">IT</option>
+        <option value="Business">Business</option>
+        <option value="Science">Science</option>
+        <option value="Arts">Arts</option>
+      </select>
+    </section>
+
+    <section aria-labelledby="shelfTitle">
+      <div class="shelf-header">
+        <h2 id="shelfTitle">Library Shelf <span class="pill" id="showingLabel">Showing All</span></h2>
+        <p id="bookCount">6 books</p>
+      </div>
+      <div id="bookList" class="book-grid"></div>
+    </section>
+
+    <section class="panel form-panel" id="add-book">
+      <h2 class="panel-title">Add New Book to Catalogue</h2>
+      <form id="bookForm" novalidate>
+        <label for="title">Book Title *</label>
+        <input type="text" id="title" name="title" placeholder="e.g. Modern Web Development with JavaScript">
+
+        <label for="author">Author *</label>
+        <input type="text" id="author" name="author" placeholder="e.g. Prof. Kwame Asante">
+
+        <div class="row">
+          <div>
+            <label for="category">Category *</label>
+            <select id="category" name="category">
+              <option value="">Select...</option>
+              <option value="IT">IT</option>
+              <option value="Business">Business</option>
+              <option value="Science">Science</option>
+              <option value="Arts">Arts</option>
+            </select>
+          </div>
+          <div>
+            <label for="copies">Copies Available *</label>
+            <input type="number" id="copies" name="copies" min="0" step="1" placeholder="e.g. 5">
+          </div>
+        </div>
+
+        <label for="cover">Cover Image (optional, max 20MB)</label>
+        <input type="file" id="cover" name="cover" accept="image/*">
+        <div id="preview" class="preview"></div>
+
+        <p id="error" class="error" role="alert"></p>
+        <p id="success" class="success" role="status"></p>
+        <button type="submit" class="btn btn-primary">Add to BlueLib Catalogue</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>BlueLib Catalogue &bull; BlueCrest College Ghana</strong></p>
+    <p>Developed by: Your Name | Student ID: 00000000</p>
+    <p class="small">Department of Information Technology &bull; All Rights Reserved &copy; 2026</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
